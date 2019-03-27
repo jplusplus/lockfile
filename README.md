@@ -1,4 +1,4 @@
-A minimal lock file mechanism, creating a temporary file to signal that a
+A minimal, no-dependencies lock file mechanism, creating a temporary file to signal that a
 specific file should not be touched by other scripts, or instances of the same script.
 
 Created for [Europe 1° Warmer](https://www.onedegreewarmer.eu/).
@@ -18,6 +18,10 @@ from tmplockfile import LockFile, ResourceLocked
 
 with LockFile("data.csv") as lockfile:
     # Do things involving data.csv here
+    #
+    # A file called `data.csv~lock` is temporarily placed in the same
+    # directory, in a way that avoids the most obvious race conditions.
+
 except ResourceLocked:
     print("Another script is currently working on data.csv. Try again later!")
 ```
