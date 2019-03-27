@@ -19,8 +19,10 @@ from tmplockfile import LockFile, ResourceLocked
 with LockFile("data.csv") as lockfile:
     # Do things involving data.csv here
     #
-    # A file called `data.csv~lock` is temporarily placed in the same
-    # directory, in a way that avoids the most obvious race conditions.
+    # A lock-file is temporarily placed in the same directory,
+    # in a way that avoids the most obvious race conditions.
+    # The variable `lockfile` contains the name of the lock-file,
+    # e.g. `data.csv~lock`.
 
 except ResourceLocked:
     print("Another script is currently working on data.csv. Try again later!")
