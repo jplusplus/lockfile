@@ -27,3 +27,9 @@ with LockFile("data.csv") as lockfile:
 except ResourceLocked:
     print("Another script is currently working on data.csv. Try again later!")
 ```
+
+## Changelog
+
+- 0.0.2
+
+  - Don't crash when no lockfile could be created

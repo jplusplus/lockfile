@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="tmplockfile",
-    version="0.0.1",
+    version="0.0.2",
     author="Leo Wallentin | J++ Stockholm",
     author_email="mejl@leowallentin.se",
     description="A minimal lock file mechanism",
