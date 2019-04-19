@@ -30,6 +30,6 @@ except ResourceLocked:
 
 ## Changelog
 
-- 0.0.2
+- 0.0.3
 
   - Don't crash when no lockfile could be created
