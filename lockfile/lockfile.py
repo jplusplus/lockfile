@@ -32,8 +32,11 @@ class LockFile(object):
                 # Something went wrong, reraise
                 raise
         finally:
-            if self.file_handle:
+            try:
                 os.close(self.file_handle)
+            except AttributeError:
+                # No file to delete
+                pass
 
     def __exit__(self, type, value, tb):
         if os.path.exists(self.lockfile):
