@@ -32,7 +32,8 @@ class LockFile(object):
                 # Something went wrong, reraise
                 raise
         finally:
-            os.close(self.file_handle)
+            if self.file_handle:
+                os.close(self.file_handle)
 
     def __exit__(self, type, value, tb):
         if os.path.exists(self.lockfile):
