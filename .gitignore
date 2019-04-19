@@ -1,2 +1,4 @@
 lockfile.md
 *.egg-info/
+build/
+dist/
